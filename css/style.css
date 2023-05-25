@@ -1,0 +1,161 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&display=swap');
+
+/*
+font-family: 'Libre Baskerville', serif;
+font-family: 'Noto Serif', serif;
+font-family: 'Gothic A1', sans-serif;
+font-family: 'Wix Madefor Display', sans-serif;
+*/
+
+/*  Reset CSS  */
+*{margin:0; padding:0;}
+ol,ul {list-style: none;}
+a{outline:0; text-decoration:none; color:#fff}
+img{border:0;}
+body{font-family: 'Gothic A1', sans-serif; font-weight: 400; font-size: 18px; color: #fff;} 
+.hidden{display: block; position: absolute; left: -1000%; width: 1px; height: 1px; overflow: hidden;}
+
+#wrap article{background:#111; transition: all 1s;}
+#wrap.bright article{background:#f0f0f0;}
+#wrap.dark article{background:#111;}
+#wrap.project article{background:orange;}
+#wrap article section{position:relative; width: 100%; height: 100%; overflow: hidden;}
+
+    /* bright */
+    #wrap.bright #menu a{color:#333; font-weight: 600;}
+    #wrap.bright #menu li.on a{opacity: 1; font-weight: 500;}
+    #wrap.bright section .title{color: #333;}
+    #wrap.bright section .cont{color:#333;}
+    #wrap.bright section .cont dl dt{font-weight: 700;}
+    #wrap.bright section .cont dl dd{color:#333; opacity: .8;}
+    #wrap.bright section .cont dl.fontcolor dd span + span::before{color:#333;}
+
+    /* project */
+    #wrap.project #menu{border-bottom: 1px solid #fff;}
+    #wrap.project #menu a{color: #fff;}
+    #wrap.project section .title p{font-family: 'Gothic A1', sans-serif; font-size: 3em;}
+    #wrap.project section .cont a.visit{background:#192549;}
+    #wrap.project section .cont a.visit:hover{background:#24345d;}
+    #wrap.project section .cont dl dd{color:rgba(106,114,146,1);}
+
+/* 공통 영역 */
+section{width:100%; height:700px; position:relative; background-size:cover; background-position:right center; background-attachment: fixed; overflow:hidden;}
+section .title{margin: 7% 0 0 150px;}
+section .title span{opacity: .8; font-size: 700;}
+section .title p{font-family: 'Libre Baskerville', serif; font-size: 3.5em; margin-top: 5px;}
+
+section .view{float:left; width: calc(50% - 175px); position: relative; top:35%; margin-left:175px; transform: translateY(-50%);}
+section .monitor>img{width: 101%; max-height: 100%;}
+section .monitor .video{position:absolute; top: 0; left: 0; padding: 2.6% 8.5%;}
+section .monitor .video>img{width: 104%; height: 100%; border-radius: 5px;}
+section .monitor .photo{position: absolute; bottom: 0; left: -35px; width: 38%;}
+section .monitor .photo img{width: 100%;}
+
+section .cont{position:relative; top:10%; margin:0 180px 0 52%;}
+section .cont p{font-size: 1.125rem; padding:.5rem 0 0;}
+section .cont a.visit{position:relative; display:block; width:15rem; height: 2.125rem; line-height: 2.125rem; font-size:0.875rem; font-weight:700; padding:0 1.43rem; box-sizing:border-box; color:#fff; background:#222; transition:all .3s; margin:2.5rem 0 0;}
+section .cont a.visit i{position:absolute; right: 1.43rem; top: 50%; transform:translateY(-50%); font-size: 0.75rem;}
+section .cont a.visit:hover{background:#fff; color: #111; border: 1px solid #111;}
+section .cont dl{padding:2.25rem 0 0;}
+section .cont dl dd{padding: 1rem 0 0; line-height: 1.8; opacity: .5;}
+
+section .cont dl.fontcolor{padding:1rem 0 0;}
+section .cont dl.fontcolor dd span{vertical-align: middle;}
+section .cont dl.fontcolor dd span + span::before{content:'/'; display:inline-block; padding: 0 .75rem;}
+section .cont dl.fontcolor dd i{display:inline-block; width: 30px; height: 10px; vertical-align: middle; margin-left:5px;}
+section .qr{position:absolute; right: 40px; bottom:40px;}
+section .qr img{width: 100px;}
+
+/*메뉴*/
+#menu{display: flex; position: fixed; z-index: 20; width: 100%; border-bottom: .5px solid #999;}
+#menu li{width: calc(100%/6); text-align: center;}
+#menu a{display:block; padding: 10px; transition:all 0.5s; font-family: 'Wix Madefor Display', sans-serif; color: #f1f1f1; opacity: .2;}
+#menu li:hover a{opacity: 1;}
+#menu li.on a{opacity: 1; font-weight: 500;}
+
+/* HOME */
+.home .main_title{position: absolute; top:5%; width: 100%; text-align: center; font-family: 'Libre Baskerville', serif; z-index: 10; }
+.home .main_title span{font-family: 'Noto Serif', serif; font-size: 9.5em; font-weight: 300; letter-spacing: -5px;}
+.home .main_title p{font-size: 10em; font-weight: 700; font-style: italic;}
+.home .main_title .type span{font-family: 'Gothic A1', sans-serif; font-style:normal; font-size: 1.2rem; font-weight: 400; margin-top: -40px; letter-spacing: 0em;}
+
+.home .sub_title span{position: absolute; bottom: 5%; font-family: 'Wix Madefor Display', sans-serif; z-index: 10; font-size: 1.5rem;}
+.home .sub_title span:nth-child(1){left: 3%;}
+.home .sub_title span:nth-child(2){right: 3%;}
+
+.home video{position: absolute; left: 0; top: 0; min-width: 100%; min-height: 100%;}
+.home .scroll_down{position: absolute; bottom: 5%; left: 50%; font-size: 2em; animation: scroll_down infinite 1s linear;}
+
+@keyframes scroll_down{
+    0% {
+    transform: translateY(0);
+    opacity: 1;
+}
+100% {
+    transform: translateY(10px);
+    opacity: 0;
+}}
+
+/* PROFILE */
+.profile{background: #111; overflow: hidden;}
+.profile .photo{float: right; width: 35%; height: 80%; margin: 7% 7% 0 0; background: url(../images/pro1.jpg) 10% 100% no-repeat; background-size: cover; filter: grayscale(.3); border-radius: 20% 50% 40% 40% / 50% 15% 30% 20%;}
+
+.profile .info{position: absolute; top: 50%; transform: translateY(-50%); margin: 0 52% 0 7%;}
+.profile .info p{font-family: 'Libre Baskerville', serif; font-size: 5em;}
+.profile .info span{font-style: italic;}
+
+.profile .info ul{margin-top: 50px;}
+.profile .info li{margin-top: 20px;}
+.profile .info dt{color: #666; font-weight: 600;}
+.profile .info dd{margin-top: 10px}
+
+.profile .btn{display: flex; width: 100%; margin-top: 50px}
+.profile .btn a{display: block; border: 1px solid #fff; width: 33.3%; padding: 8px 20px; margin-right: 10px; font-size: .8em; transition: all .3s;}
+.profile .btn a:hover{background-color: #fff; color: #333; font-weight: 500;}
+.profile .btn i{float: right;}
+
+/* PC */
+.pc .title p::before{content:'®'; display: block; position: absolute; left: 130px; font-size: .3em;}
+
+.pc .logo{opacity: .2; position: absolute; top: 180px; right: 184px;}
+.pc .logo img{width: 300px;}
+
+section.pc .cont dl.fontcolor dd i:nth-of-type(1){background-color:#0c4da2;}
+section.pc .cont dl.fontcolor dd i:nth-of-type(2){background-color:#fff;}
+section.pc .cont dl.fontcolor dd i:nth-of-type(3){background-color:#333;}
+
+/* MOBILE */
+.mobile .title p::before{content:'®'; display: block; position: absolute; left: 130px; font-size: .3em;}
+
+.mobile .logo{opacity: .5; position: absolute; top: 180px; right: 184px;}
+.mobile .logo img{width: 300px;}
+
+.mobile .view{float:left; position:relative; width: 35%; margin-left:175px; box-sizing:border-box;}
+.mobile .monitor{position:absolute; left:50%; top:50%; transform:translate(-56%, -42%);}
+.mobile .monitor img{width:128%}
+.mobile .monitor .video{position:absolute; left:18px; top: 0; width: 100%;box-sizing:border-box; padding: 22.4% 11.3%;}
+.mobile .monitor .video>img{width: 118%;}
+
+section.mobile .cont dl.fontcolor dd i:nth-of-type(1){background-color:#0c4da2;}
+section.mobile .cont dl.fontcolor dd i:nth-of-type(2){background-color:#fff;}
+section.mobile .cont dl.fontcolor dd i:nth-of-type(3){background-color:#333;}
+
+/* 반응형 */
+.responsive .logo{position: absolute; top: 180px; right: 184px;}
+.responsive .logo img{width: 300px;}
+
+section.responsive .cont dl.fontcolor dd i:nth-of-type(1){background-color:#36a8ee;}
+section.responsive .cont dl.fontcolor dd i:nth-of-type(2){background-color:#fff;}
+section.responsive .cont dl.fontcolor dd i:nth-of-type(3){background-color:#333;}
+
+/* WORDPRESS */
+.wordpress .logo{opacity: .2; position: absolute; top: 180px; right: 184px;}
+.wordpress .logo img{width: 340px;}
+
+section.wordpress .cont dl.fontcolor dd i:nth-of-type(1){background-color:#d6e950;}
+section.wordpress .cont dl.fontcolor dd i:nth-of-type(2){background-color:#fff;}
+section.wordpress .cont dl.fontcolor dd i:nth-of-type(3){background-color:#333;}
